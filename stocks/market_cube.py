@@ -1,28 +1,18 @@
-import numpy as np
-import pandas as pd
-import torch
-
-columns = ["volume", "open", "high", "low", "close", "adj close", "MACD", "RSI"]
 
 from typing import Callable
 
+import pandas as pd
+import torch
 
-def use_market_image_from_date(date: str):
-    def tail_from_date(df: pd.DataFrame, t: int)->pd.DataFrame | None:
-        """
-            https://stackoverflow.com/a/71744691/11004209
-            get the last t rows of a pandas dataframe that are before the given date
+from lib import tail_from_row
 
-            return:
-                - t x n dataframe
-				- None if the given date is not in the dataframe
-        """
-        last_idx: list[int] = np.flatnonzero(df["date"] == date)
+columns = ["volume", "open", "high", "low", "close", "adj close", "MACD", "RSI"]
 
-        if len(last_idx) > 0:
-            return df.iloc[last_idx[0]-t+1: last_idx[0]]
-        return None
-    return tail_from_date
+
+def use_market_image_from_date(date: str)->Callable[[pd.DataFrame, int], pd.DataFrame | None]:
+    def condition(df: pd.DataFrame):
+        return df["date"] == date
+    return lambda df, t : tail_from_row(df, t, condition)
 
 def csv2Tensor(fp: str, t: int, tail_f: Callable[[pd.DataFrame, int], pd.DataFrame | None] = None):
     """
@@ -60,3 +50,4 @@ def make_market_cube(filepaths: list[str], t: int = 10, n: int = len(columns), t
             market_cube = torch.cat((market_cube, stock_image), dim=1)
 
     return market_cube
+

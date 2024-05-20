@@ -4,3 +4,7 @@ This repository is for the project "So.. should I buy?", which is in progress wi
 
 #### Dataset
 This project used stock price dataset from [FNSPID](https://huggingface.co/datasets/Zihan1004/FNSPID), with MACD and RSI appended.
+
+### How to use
+1. Clone this repository.
+2. Since this repo contains git-lfs files, run `git lfs pull origin main` to download full dataset.

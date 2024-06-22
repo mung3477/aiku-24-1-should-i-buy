@@ -20,7 +20,7 @@ We referred to the following papers and repositories for the implementation.
 
 ### Model
 
--   We used `Twitter-RoBERTa` & `BART MNLI` for the news articles
+-   We used `Twitter-RoBERTa` & `BERT MNLI` for the news articles
 -   We embedded a market cube with convolutional layers and added position embeddings, and fed the resulting sequence of vectors to a `standard transformer encoder`. In order to perform prediction, we used the standard approach of adding an extra learnable "prediction token" to the sequence.
 -   We used MLP to aggregate embeddings and predict a bitcoin price flunctutaion range.
 

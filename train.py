@@ -4,9 +4,9 @@ from tqdm import tqdm
 from transformers import (AutoModel, AutoTokenizer, RobertaModel,
                           RobertaTokenizer)
 
-from dataset import make_dataloaders
-from lib import evaluate, train_epoch
-from model import BTCPricePredictor
+from src.dataset import make_dataloaders
+from src.lib import evaluate, train_epoch
+from src.model import BTCPricePredictor
 
 
 def train(hyperparams: dict, stock_size: int, chart_columns: list, train_dataloader: DataLoader, val_dataloader:DataLoader,  device="cpu"):

@@ -178,3 +178,6 @@ pyrightconfig.json
 .DS_Store
 news_data_*.csv
 model.pth
+
+# vscode
+*.code-workspace

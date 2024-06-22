@@ -4,7 +4,7 @@ from typing import Callable
 import pandas as pd
 import torch
 
-from lib import tail_from_row
+from src.lib import tail_from_row
 
 
 def use_market_image_from_date(date: str)->Callable[[pd.DataFrame, int], pd.DataFrame | None]:

@@ -4,9 +4,9 @@ import torch
 from transformers import (AutoModel, AutoTokenizer, RobertaModel,
                           RobertaTokenizer)
 
-from dataset import make_dataloaders
-from lib import test
-from model import BTCPricePredictor
+from src.dataset import make_dataloaders
+from src.lib import test
+from src.model import BTCPricePredictor
 
 
 def plot_prediction(result):
@@ -89,8 +89,8 @@ def plot_prediction(result):
 	# Finally, save the figure as a PNG.
 	# You can also save it as a PDF, JPEG, etc.
 	# Just change the file extension in this call.
-	# fig.savefig('stock-prices.png', bbox_inches='tight')
-	plt.show()
+	fig.savefig('btc-predicted.png', bbox_inches='tight')
+	# plt.show()
 
 def test_model(model: BTCPricePredictor, test_dataloader, loss_fn, device):
 

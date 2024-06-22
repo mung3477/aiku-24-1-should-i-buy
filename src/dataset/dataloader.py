@@ -6,8 +6,8 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
 
-from lib import get_all_files, tail_from_row
-from stocks import make_market_cube, use_market_image_from_date
+from src.lib import get_all_files, tail_from_row
+from src.stocks import make_market_cube, use_market_image_from_date
 
 
 class CustomCoinMarketDataset(Dataset):

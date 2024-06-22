@@ -11,4 +11,7 @@ This project used stock price dataset from [FNSPID](https://huggingface.co/datas
 ### How to use
 1. Clone this repository.
 2. Since this repo contains git-lfs files, run `git lfs pull origin main` to download full dataset.
+<<<<<<< HEAD
+>>>>>>> 42b2874ba25dffc6137f3a8c3eb93d5478f4fc12
+=======
 >>>>>>> 42b2874ba25dffc6137f3a8c3eb93d5478f4fc12

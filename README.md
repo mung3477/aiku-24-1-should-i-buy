@@ -9,7 +9,7 @@ We implemented a model that predicts a bitcoin price fluctuation using the histo
 
 ### Dataset
 
-We crawled news headlines from [cointelegraph](https://cointelegraph.com/tags/bitcoin) and [coindesk](https://www.coindesk.com/).
+We crawled news headlines from [cointelegraph](https://cointelegraph.com/tags/bitcoin) and [coindesk](https://www.coindesk.com/), and reddit threads from [bitcoin subreddit](https://www.reddit.com/r/Bitcoin/) using Reddit API. We used a twitter dataset from [kaggle](https://www.kaggle.com/datasets/kaushiksuresh147/bitcoin-tweets).
 [TBD]
 
 ### Related works

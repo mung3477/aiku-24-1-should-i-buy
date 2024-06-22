@@ -14,15 +14,15 @@ We crolled news headlines from [cointelegraph](https://cointelegraph.com/tags/bi
 
 ### Related works
 
-We referred to the following papers and repositories for the implementation.
-<br>
-[This paper](https://arxiv.org/pdf/2311.14759) proposed a combination of `Twitter-RoBERTa` & `BART MNLI` for predicting the bitcoin price based on the news articles. [This paper](https://arxiv.org/pdf/1809.03684.pdf) proposed a attention based model that predicts the bitcoin price based on the historical data.
+We referred to the following papers and repositories for the implementation.<br>
+[This paper](https://arxiv.org/pdf/2311.14759) proposed a combination of `Twitter-RoBERTa` & `BART MNLI` for predicting the bitcoin price based on the news articles.<br>
+[This paper](https://arxiv.org/pdf/1809.03684.pdf) proposed a attention based model that predicts the bitcoin price based on a cube shaped historical data, called a market cube.
 
 ### Model
 
--   We used `Twitter-RoBERTa` & `BERT MNLI` for the news articles
+-   We used the `Twitter-RoBERTa` & `BERT MNLI` for the news articles
 -   We embedded a market cube with convolutional layers and added position embeddings, and fed the resulting sequence of vectors to a `standard transformer encoder`. In order to perform prediction, we used the standard approach of adding an extra learnable "prediction token" to the sequence.
--   We used MLP to aggregate embeddings and predict a bitcoin price flunctutaion range.
+-   We used a MLP to aggregate embeddings and predict a bitcoin price flunctutaion range.
 
 ## 🎯 Performance
 

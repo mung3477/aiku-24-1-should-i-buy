@@ -181,3 +181,6 @@ model.pth
 
 # vscode
 *.code-workspace
+
+# uv
+.venv

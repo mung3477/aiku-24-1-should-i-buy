@@ -31,16 +31,16 @@ def RSI(dataset: pd.DataFrame, n:int = 14):
 	rsi= 100.0 - (100.0 / (1.0 + RS))
 	return round(rsi, 2)
 
-def add_MACD_RSI(filepath: str, dtype: dict):
+def add_MACD_RSI(filepath: str, dtype: dict = None):
 	"""
 		Add MACD, RSI field in csv file and save it
 	"""
-	dataset = pd.read_csv(filepath, dtype=dtype).iloc[::-1]
+	dataset = pd.read_csv(filepath, usecols=["date", "volume", "open", "high", "low", "close"]).sort_values(by=["date"])
 	dataset['MACD'] = MACD(dataset)
 	dataset['RSI'] = RSI(dataset)
-	dataset.to_csv(filepath)
+	dataset.to_csv(filepath, index=False)
 
-
+	print("Added MACD, RSI in", filepath)
 
 
 if __name__ == "__main__":

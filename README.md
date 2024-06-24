@@ -14,7 +14,7 @@
 저희가 구현한 모델은 하나의 기사 또는 텍스트와 10일치 암호화폐 500 여 종목의 차트 데이터를 입력으로 받아, 10일 후의 비트코인 가격 변동을 예측하는 모델입니다. 모델은 `Twitter-RoBERTa` & `BERT MNLI` 기반의 텍스트 임베딩 모델과 `transformer encoder` 기반의 암호화폐 시장 상황 임베딩 모델을 MLP를 이용해 결합하여 구현했습니다.
 
 -   Twitter-RoBERTa: SNS 데이터에 특화된 RoBERTa 모델을 사용하여 텍스트 데이터를 임베딩합니다.
--   BERT MNLI: 텍스트 데이터와 `"The Bitcoin Price is likely to continue rising."` 이라는 문장과의 감정 유사도를 임베딩하는 데 사용합니다.
+-   BERT MNLI: 텍스트 데이터와 `"The Bitcoin Price is likely to continue rising."` 이라는 가설 문장이 논리적으로 부합하는지를 판단합니다.
 -   Market cube embedding: 암호화폐 시장 상황을 3차원 큐브로 표현하여, `conv2d`를 통해 각 날짜 별 시장 상황을 임베딩하고, 위치 임베딩을 추가하여 시퀀스 벡터를 얻어 `standard transformer encoder`에 입력합니다. 예측을 수행하기 위해 시퀀스에 추가적인 학습 가능한 "예측 토큰"을 추가하는 표준적인 방법을 사용했습니다.
 
 ### 관련 연구

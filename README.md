@@ -53,8 +53,10 @@ python -m pip install -r requirements.txt
 -   성능을 테스트하려면 `test.py`를 실행합니다. 코드는 *2023년 7월부터 2024년 5월*까지의 예측된 가격 변동과 실제 가격 변동을 `btc-predicted.png`에 그려냅니다.
 
 ## 예시 결과
-
-(사용 방법을 실행했을 때 나타나는 결과나 시각화 이미지를 보여주세요) TBD
+- 오차범위 0.1%p : 93.5%
+- 오차범위 0.01%p: 13.5%
+![결과](https://github.com/mung3477/aiku-24-1-should-i-buy/assets/18616006/2dcc9133-b4e0-464a-ad85-59f765c0d1ff)
+)
 
 ## 팀원
 
